@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './variable.scss';
+
+/* overwite default */
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  width: 100vw;
+  height: 100vh;
+  color-scheme: light dark;
+  /* color: rgba(0, 0, 0, 0.87); */
+  background-color: $mainBgColor;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  --van-sidebar-selected-border-height: 44px !important;
+  --van-sidebar-selected-border-width: 2px !important;
+  --van-nav-bar-background: $mainBgColor !important;
+  --van-nav-bar-title-text-color: $text-color !important;
+  --van-uploader-upload-background: var(--upload_bg) !important;
+  --van-index-anchor-text-color: #fff !important;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  color: $mainTextColor;
+  background-color: $mainBgColor;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@supports (bottom: constant(safe-area-inset-bottom)) {
+  body {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.safe-area-pb {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.pb-fix {
+  padding-bottom: 6rem;
+}
+
+input {
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: #c0c4cc;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+/* component css */
+.divider {
+  height: 6px;
+  width: 100%;
+  background: $second-bg;
+}
+
+.no-data-img {
+  width: 90px !important;
+  height: 90px !important;
+  opacity: 0.6;
+}
+.van-swipe__indicators{
+
+  .van-swipe__indicator{
+    background-color: $dot-alp;
+  }
+
+  .van-swipe__indicator--active{
+    background-color: $active_line !important;
+  }
+}
